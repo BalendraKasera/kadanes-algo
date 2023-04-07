@@ -1,0 +1,32 @@
+public class Kadane {
+    public static void printk(int num[]) {
+        int cs = 0;
+
+        int ms = Integer.MIN_VALUE;
+        int ms1 = Integer.MIN_VALUE;
+
+        for (int i = 0; i < num.length; i++) {
+
+            cs = cs + num[i];
+            if (cs < 0) {
+                cs = 0;
+            }
+            ms = Math.max(ms, cs);
+            if (num[i] < 0) {
+                ms1 = Math.max(ms1, num[i]);
+
+            }
+        }
+
+        System.out.println(ms);
+
+        System.out.print(ms1);
+
+    }
+
+    public static void main(String args[]) {
+        int num[] = { -2, -3 };
+        printk(num);
+    }
+
+}
